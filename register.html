@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Registration - Hotel Booking System</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="registration-container">
+            <div class="logo-section">
+                <img src="images/logo.svg" alt="Hotel Logo" class="logo" />
+            </div>
+            
+            <h1>Member Registration</h1>
+            <p class="subtitle">Create your account to start booking</p>
+            
+            <form id="registrationForm" method="post" action="php/register.php">
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required="required" />
+                    <span class="error-message" id="lastNameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" required="required" />
+                    <span class="error-message" id="firstNameError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Mailing Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" rows="3" required="required"></textarea>
+                    <span class="error-message" id="addressError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Contact Phone <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" required="required" />
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required="required" />
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" required="required" />
+                    <span class="help-text">Min 8 characters, 1 uppercase, 1 number</span>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" class="btn btn-secondary" id="clearBtn">Clear</button>
+                    <button type="button" class="btn btn-link" id="backHomeBtn">Back to Home</button>
+                </div>
+                
+                <div class="form-message" id="formMessage"></div>
+            </form>
+            
+            <div class="login-link">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#1a4d7a" stroke="#d4af37" stroke-width="3"/>
+  
+  <!-- Hotel building silhouette -->
+  <g fill="#d4af37">
+    <!-- Main building -->
+    <rect x="70" y="60" width="60" height="80" rx="2"/>
+    
+    <!-- Windows - 3 rows of 3 -->
+    <rect x="77" y="68" width="8" height="10" fill="#1a4d7a"/>
+    <rect x="92" y="68" width="8" height="10" fill="#1a4d7a"/>
+    <rect x="107" y="68" width="8" height="10" fill="#1a4d7a"/>
+    
+    <rect x="77" y="85" width="8" height="10" fill="#1a4d7a"/>
+    <rect x="92" y="85" width="8" height="10" fill="#1a4d7a"/>
+    <rect x="107" y="85" width="8" height="10" fill="#1a4d7a"/>
+    
+    <rect x="77" y="102" width="8" height="10" fill="#1a4d7a"/>
+    <rect x="92" y="102" width="8" height="10" fill="#1a4d7a"/>
+    <rect x="107" y="102" width="8" height="10" fill="#1a4d7a"/>
+    
+    <!-- Entrance door -->
+    <rect x="92" y="120" width="16" height="20" fill="#1a4d7a"/>
+    
+    <!-- Roof/Crown -->
+    <polygon points="100,45 70,60 130,60" fill="#d4af37"/>
+    
+    <!-- Decorative elements - stars on sides -->
+    <path d="M 50,100 L 52,105 L 57,105 L 53,108 L 55,113 L 50,110 L 45,113 L 47,108 L 43,105 L 48,105 Z" fill="#d4af37"/>
+    <path d="M 150,100 L 152,105 L 157,105 L 153,108 L 155,113 L 150,110 L 145,113 L 147,108 L 143,105 L 148,105 Z" fill="#d4af37"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="165" font-family="serif" font-size="18" font-weight="bold" fill="#d4af37" text-anchor="middle">GRANDVIEW</text>
+  <text x="100" y="180" font-family="serif" font-size="10" fill="#d4af37" text-anchor="middle">HOTELS</text>
+</svg>
