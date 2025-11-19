@@ -16,14 +16,14 @@ CREATE TABLE users (
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     INDEX idx_email (email)
-) ENGINE=InnoDB;
+);
 
 -- Table 2: regions
 -- Stores geographical regions where hotels are located
 CREATE TABLE regions (
     region_id INT AUTO_INCREMENT PRIMARY KEY,
     region_name VARCHAR(100) NOT NULL UNIQUE
-) ENGINE=InnoDB;
+);
 
 -- Table 3: hotels
 -- Stores hotel information linked to regions
@@ -34,7 +34,7 @@ CREATE TABLE hotels (
     address TEXT NOT NULL,
     FOREIGN KEY (region_id) REFERENCES regions(region_id),
     INDEX idx_region (region_id)
-) ENGINE=InnoDB;
+);
 
 -- Table 4: room_type
 -- Stores room type categories with maximum occupancy
@@ -43,7 +43,7 @@ CREATE TABLE room_type (
     room_type_name VARCHAR(100) NOT NULL,
     max_occupancy INT NOT NULL,
     UNIQUE KEY uk_room_type (room_type_name)
-) ENGINE=InnoDB;
+);
 
 -- Table 5: room_inventory
 -- Each physical room in the hotel system (one row per room)
@@ -57,7 +57,7 @@ CREATE TABLE room_inventory (
     FOREIGN KEY (room_type_id) REFERENCES room_type(room_type_id),
     UNIQUE KEY uk_hotel_room (hotel_id, room_number),
     INDEX idx_hotel (hotel_id)
-) ENGINE=InnoDB;
+);
 
 -- Table 6: bookings
 -- Stores reservation information with unique booking references
@@ -78,7 +78,7 @@ CREATE TABLE bookings (
     INDEX idx_user (user_id),
     INDEX idx_room_dates (rm_id, check_in_date, check_out_date),
     INDEX idx_booking_ref (booking_reference)
-) ENGINE=InnoDB;
+);
 
 -- ============================================
 -- SAMPLE DATA INSERTION
