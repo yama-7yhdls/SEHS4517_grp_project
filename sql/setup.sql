@@ -48,7 +48,7 @@ CREATE TABLE room_type (
 -- Table 5: room_inventory
 -- Each physical room in the hotel system (one row per room)
 CREATE TABLE room_inventory (
-    rm_id INT AUTO_INCREMENT PRIMARY KEY,
+    room_id INT AUTO_INCREMENT PRIMARY KEY,
     hotel_id INT NOT NULL,
     room_type_id INT NOT NULL,
     room_number VARCHAR(20) NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     booking_reference VARCHAR(20) NOT NULL UNIQUE,
     user_id INT NOT NULL,
-    rm_id INT NOT NULL,
+    room_id INT NOT NULL,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
     adults_count INT NOT NULL,
@@ -74,9 +74,9 @@ CREATE TABLE bookings (
     status VARCHAR(20) NOT NULL DEFAULT 'confirmed',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (rm_id) REFERENCES room_inventory(rm_id),
+    FOREIGN KEY (room_id) REFERENCES room_inventory(room_id),
     INDEX idx_user (user_id),
-    INDEX idx_room_dates (rm_id, check_in_date, check_out_date),
+    INDEX idx_room_dates (room_id, check_in_date, check_out_date),
     INDEX idx_booking_ref (booking_reference)
 );
 
@@ -230,7 +230,7 @@ GROUP BY r.region_id, r.region_name
 ORDER BY r.region_name;
 
 -- Display room inventory summary
-SELECT h.hotel_name, rt.room_type_name, COUNT(ri.rm_id) as room_count
+SELECT h.hotel_name, rt.room_type_name, COUNT(ri.room_id) as room_count
 FROM hotels h
 JOIN room_inventory ri ON h.hotel_id = ri.hotel_id
 JOIN room_type rt ON ri.room_type_id = rt.room_type_id
