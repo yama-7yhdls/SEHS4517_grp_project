@@ -1,0 +1,268 @@
+/* ===================================
+   Responsive Design - Mobile First
+   =================================== */
+
+/* Tablet Styles (768px and below) */
+@media screen and (max-width: 768px) {
+    
+    /* Hero Section */
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .site-title {
+        font-size: 2.2em;
+        letter-spacing: 1px;
+    }
+    
+    .tagline {
+        font-size: 1.1em;
+    }
+    
+    /* Main Content */
+    .main-content {
+        padding: 40px 0;
+    }
+    
+    .introduction h2 {
+        font-size: 2em;
+    }
+    
+    .introduction h3 {
+        font-size: 1.5em;
+    }
+    
+    .intro-text {
+        font-size: 1em;
+        text-align: left;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 30px 20px;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8em;
+    }
+    
+    .cta-section p {
+        font-size: 1em;
+    }
+    
+    /* Buttons */
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    
+    /* Form Container */
+    .form-container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+}
+
+/* Mobile Styles (480px and below) */
+@media screen and (max-width: 480px) {
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        padding: 30px 0;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .site-title {
+        font-size: 1.8em;
+    }
+    
+    .tagline {
+        font-size: 1em;
+    }
+    
+    /* Main Content */
+    .main-content {
+        padding: 30px 0;
+    }
+    
+    .introduction {
+        margin-bottom: 40px;
+    }
+    
+    .introduction h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    
+    .introduction h2::after {
+        width: 60px;
+    }
+    
+    .introduction h3 {
+        font-size: 1.3em;
+        margin-top: 20px;
+        padding-left: 10px;
+        border-left-width: 3px;
+    }
+    
+    .intro-text {
+        font-size: 0.95em;
+    }
+    
+    .intro-text p {
+        margin-bottom: 15px;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 25px 15px;
+        margin: 0 10px;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.5em;
+    }
+    
+    .cta-section p {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95em;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Footer */
+    .site-footer {
+        padding: 20px 0;
+        margin-top: 40px;
+    }
+    
+    .site-footer p {
+        font-size: 0.85em;
+    }
+    
+    /* Form Elements */
+    .form-container {
+        padding: 25px 15px;
+        margin: 15px 10px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+/* Large Desktop Styles (1400px and above) */
+@media screen and (min-width: 1400px) {
+    
+    .container {
+        max-width: 1400px;
+    }
+    
+    .site-title {
+        font-size: 3.5em;
+    }
+    
+    .tagline {
+        font-size: 1.5em;
+    }
+    
+    .introduction h2 {
+        font-size: 3em;
+    }
+    
+    .intro-text {
+        font-size: 1.15em;
+    }
+}
+
+/* Print Styles */
+@media print {
+    
+    .hero-section {
+        background: white;
+        color: black;
+        padding: 20px 0;
+    }
+    
+    .site-title,
+    .tagline {
+        color: black;
+        text-shadow: none;
+    }
+    
+    .button-group,
+    .site-footer {
+        display: none;
+    }
+    
+    .intro-text {
+        text-align: left;
+    }
+    
+    .cta-section {
+        display: none;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .logo:hover {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    
+    .btn {
+        border-width: 3px;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: 3px solid;
+    }
+}
