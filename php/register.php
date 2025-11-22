@@ -1,6 +1,6 @@
 <?php
 // Include database configuration
-require_once 'config.php';
+require_once __DIR__ . '/config.php';
 
 // Set response header
 header('Content-Type: application/json');
@@ -13,11 +13,6 @@ function sendResponse($success, $message, $httpCode = 200) {
         'message' => $message
     ]);
     exit;
-}
-
-// Function to sanitize input
-function sanitizeInput($data) {
-    return htmlspecialchars(strip_tags(trim($data)));
 }
 
 // Function to validate email format
